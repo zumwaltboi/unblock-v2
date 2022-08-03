@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<index>
+
+  <head>
+    <title>Website Unblocker</title>
+    <meta name="description" content="The IMPROVED Bookmarklet creator tool!">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <header align="center">
+      <img src="https://cdn.glitch.global/88f0bfd9-9f01-4383-885d-7686e53ceb46/www-icon?v=1659567656258" alt="Magic 8 Ball Icon" width="300"
+        height="300">
+      <h1>Website Unblocker</h1>
+      <h2 id="credits">Supplied by VillainsRule.</h2>
+      <br>
+    </header>
+    <div align="center" class="center-div">
+      <h2>the Test</h2>
+      <p>
+        This is a common test.<br><br>
+        Bascially, all you have to do is drag the below link to your Bookmarks bar.
+      </p>
+      <h3><a href="javascript:(function()%7Balert('Works!')%3B%7D)()%3B">Hi!</a></h3>
+      <p>
+        If it says Works!, step 1 is done.<br><br>
+        If it doesn't respond...sorry...but you're out of luck.
+      </p>
+      <br>
+      <br>
+    </div>
+    <br>
+    <br>
+    <div align="center" class="center-div">
+      <input class="input" id="title-input" placeholder="Game Name"><br><br><br>
+      <textarea id="code-textarea" placeholder="Game URL"></textarea>
+      <br>
+      <br>
+      <div>
+        <button class="button" onclick="generateBookmarklet();">Generate Unblocker</button>
+        <button class="button" onclick="clearCode();">Clear</button>
+      </div>
+      <h3>Result: <a id="bookmarklet-a" class="bookmarklet" href="">Nothing Yet!</a></h3>
+      <p id="nothing"></p>
+      <br>
+      <br>
+    </div>
+    <br>
+    <br>
+    <div align="center">
+      <h2>WARNING</h2>
+      <p>Depending on the Block software and/or site, this may fail.</p>
+    </div>
+  </body>
+</index>

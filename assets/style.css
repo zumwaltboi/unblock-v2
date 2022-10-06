@@ -92,7 +92,7 @@ placeholder {
 }
 
 #code-textarea {
-  font-size: 14px;
+  font-size: 20px;
   line-height: 20px;
   height: 40px;
   border: 2px dashed #b5e853;
@@ -100,6 +100,8 @@ placeholder {
   width:  725px;
   background-color: black;
   color: white;
+  text-align: center;
+  justify-content: center;
 }
 
 .output-textarea {

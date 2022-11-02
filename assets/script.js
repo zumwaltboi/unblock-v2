@@ -17,7 +17,9 @@ function generateBookmarklet() {
 function reloadFrame() {
   if (isFrame) {
     try {
-      document.getElementById('iframe').contentWindow.location.reload();
+      let currentSRC = document.getElementById('iframe').src;
+      document.getElementById('iframe').src = "about:blank";
+      document.getElementById('iframe').src = currentSRC;
     } catch(e) {
       document.getElementById("state").innerHTML = 'State: unknown error, reload & contact support.';
     }

@@ -22,3 +22,9 @@ function genF() {
   
   isFrame = true;
 }
+
+function reset() {
+  document.getElementById("state").innerHTML = 'State: page reset, no active frame.';
+  document.getElementById("warning").classList.remove("center-div");
+  isFrame = false;
+}

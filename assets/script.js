@@ -28,3 +28,5 @@ function reset() {
   document.getElementById("warning").classList.remove("center-div");
   isFrame = false;
 }
+
+alert(`Welcome to Unblockrr!\n\nTo prevent DDOS attacks and other forms of abuse, your device information has been logged.\nThis is encrypted and doesn't matter much to the average person, so just click ok and enjoy Unblockrr!`);

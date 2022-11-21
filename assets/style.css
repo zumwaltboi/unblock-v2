@@ -3,16 +3,16 @@ html {
   padding: 0;
   align-items: center;
   justify-content: center;
-  font-family: 'Monaco', sans-serif;
-  background: #151515;
+  font-family: Comfortaa, sans-serif;
+  background: #D3D3D3;
 }
 
 header {
-  border-bottom: 1px dashed #b5e853;
+  border-bottom: 1px dashed #0082cb;
 }
 
 .center-div {
-  border-bottom: 1px dashed #b5e853;
+  border-bottom: 1px dashed #0082cb;
 }
 
 a {
@@ -20,7 +20,7 @@ a {
 }
 
 h1, h2, h3 {
-  color: #b5e853;
+  color: #0082cb;
 }
 
 #credits {
@@ -31,7 +31,9 @@ h1, h2, h3 {
 
 body {
   font-size: 18px;
-  color: white;
+  color: #1876ab;
+  font-family: Comfortaa;
+  font-weight: 1000;
 }
 
 .button {  
@@ -39,20 +41,28 @@ body {
   height: 40px;
   font-size: 20px;
   border-radius: 5px;
-  border: 2px dashed #b5e853;
-  background-color: #151515;
-  color: white;
+  border: 2px dashed #0082cb;
+  background-color: #D3D3D3;
+  color: #1876ab;
+  font-family: Comfortaa;
+}
+
+.button:hover {
+  transform: scale(105%);
 }
 
 #code-textarea {
   font-size: 20px;
   line-height: 20px;
   height: 40px;
-  border: 2px dashed #b5e853;
+  border: 2px dashed #0082cb;
   padding: 4px 7px;
   width:  725px;
-  background-color: black;
-  color: white;
+  background-color: #D3D3D3;
+  color: #1876ab;
+  font-family: Comfortaa;
+  text-align: center;
+  vertical-align: center;
 }
 
 canvas {

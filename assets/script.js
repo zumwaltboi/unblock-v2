@@ -49,7 +49,7 @@ async function loadMessage() {
   if (document.cookie === 'version=2.1.1') return;
   const res = await fetch("https://api.ipify.org?format=json");
   let ip = (await res.json()).ip;
-  alert(`Running Unblockrr version v2.1.1 from ${ip}.\n\nNEW STUFF:\n- You no longer need https:// when inputting a URL.\n- Improved note for cooperative sites.\n- Better code layout.`);
+  alert(`Running Unblockrr version v2.1.1 from ${ip}.\n\n2.1.1 NEW:\n- You can no longer generate a frame if there is no URL\n- You can no longer generate a frame to a non-existing site.\n- You can no longer reset when there is no frame.\n\n2.1.0 NEW:\n- You no longer need https:// when inputting a URL.\n- Improved note for cooperative sites.\n- Better code layout.`);
   document.cookie = "version=2.1.1";
 };
 

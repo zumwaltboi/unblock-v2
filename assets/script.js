@@ -29,4 +29,12 @@ function reset() {
   isFrame = false;
 }
 
-alert(`Welcome to Unblockrr!\n\nTo prevent DDOS attacks and other forms of abuse, your device information has been logged.\nThis is encrypted and doesn't matter much to the average person, so just click ok and enjoy Unblockrr!`);
+async function DDOSwarn() {
+  if (document.cookie === 'viewed=true') return;
+  const res = await fetch("https://api.ipify.org?format=json");
+  let ip = (await res.json()).ip
+  alert(`Welcome to Unblockrr!\n\nTo prevent abuse, your IP address (` + ip + `) has been securly logged.\n\nIf you're just here to unblock, click ok!`);
+  document.cookie = "viewed=true";
+};
+
+DDOSwarn();

@@ -16,19 +16,20 @@
     <header align="center">
       <img src="https://cdn-icons-png.flaticon.com/512/3308/3308395.png" alt="Icon" width="300" height="300">
       <h1>Unblockrr</h1>
+      <h2 class="version"><b>version 2.1.0</b></h2> 
     </header>
-    <div align="center" class="center-div">
+    <div align="center" class="bottomBorder">
       <br>
-      <textarea id="code-textarea" placeholder="Full site link"></textarea>
+      <textarea class="urlBox" placeholder="URL to unblock..."></textarea>
       <br>
       <br>
-      <button class="button" onclick="generateBookmarklet();">Generate Unblocker</button>
+      <button onclick="addFrame();">Generate Unblocker</button>
       <h3 id="state">State: No Input</h3>
     </div>
-    <div align="center" id="warning">
-      <h2>WARNING</h2>
-      <p>Depending on the Block software and/or site, this may fail.</p>
-      <button class="button" onclick="reset();">Reset</button>
+    <div align="center">
+      <h2>Note</h2>
+      <p>Depending on the Block software and/or site, Unblockrr may fail.<br>This unblocker is primarily for games; bigger websites like Netflex/Spotify do not support this.</p>
+      <button onclick="reset();">Reset</button>
       <br>
       <br>
     </div>

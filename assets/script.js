@@ -11,6 +11,10 @@ function addFrame() {
 
 function createFrame() {
   let frameURL = document.getElementsByClassName("urlBox")[0].value;
+  if (frameURL === '') {
+    document.getElementById("state").innerHTML = 'State: no URL to generate';
+    return;
+  };
   
   var ifrm = document.createElement('iframe');
   
@@ -29,6 +33,11 @@ function createFrame() {
 };
 
 function reset() {
+  if (!isFrame) {
+    document.getElementById("state").innerHTML = 'State: no frame to reset';
+    return;
+  };
+  
   document.getElementById("state").innerHTML = 'State: page reset, no active frame.';
   document.getElementById("warning").classList.remove("bottomBorder");
   
@@ -37,11 +46,11 @@ function reset() {
 };
 
 async function loadMessage() {
-  if (document.cookie === 'version=2.1.0') return;
+  if (document.cookie === 'version=2.1.1') return;
   const res = await fetch("https://api.ipify.org?format=json");
   let ip = (await res.json()).ip;
-  alert(`Running Unblockrr version v2.1.0 from ${ip}.\n\nNEW STUFF:\n- You no longer need https:// when inputting a URL.\n- Improved note for cooperative sites.\n- Better code layout.`);
-  document.cookie = "version=2.1.0";
+  alert(`Running Unblockrr version v2.1.1 from ${ip}.\n\nNEW STUFF:\n- You no longer need https:// when inputting a URL.\n- Improved note for cooperative sites.\n- Better code layout.`);
+  document.cookie = "version=2.1.1";
 };
 
 loadMessage();

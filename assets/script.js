@@ -14,6 +14,8 @@ function createFrame() {
   if (frameURL === '') {
     document.getElementById("state").innerHTML = 'State: no URL to generate';
     return;
+  } else if (!frameURL.includes('.')) {
+    document.getElementById("state").innerHTML = 'State: Invalid URL; input another.';
   };
   
   var ifrm = document.createElement('iframe');
@@ -27,7 +29,7 @@ function createFrame() {
   document.body.appendChild(ifrm);
 
   document.getElementById("state").innerHTML = 'State: complete, scroll down';
-  document.getElementById("warning").classList.add("bottomBorder");
+  document.getElementById("note").classList.add("bottomBorder");
   
   isFrame = true;
 };
@@ -39,18 +41,18 @@ function reset() {
   };
   
   document.getElementById("state").innerHTML = 'State: page reset, no active frame.';
-  document.getElementById("warning").classList.remove("bottomBorder");
+  document.getElementById("note").classList.remove("bottomBorder");
   
   document.getElementById('iframe').remove();
   isFrame = false;
 };
 
 async function loadMessage() {
-  if (document.cookie === 'version=2.1.1') return;
+  if (document.cookie === 'version=2.1.2') return;
   const res = await fetch("https://api.ipify.org?format=json");
   let ip = (await res.json()).ip;
-  alert(`Running Unblockrr version v2.1.1 from ${ip}.\n\n2.1.1 NEW:\n- You can no longer generate a frame if there is no URL\n- You can no longer generate a frame to a non-existing site.\n- You can no longer reset when there is no frame.\n\n2.1.0 NEW:\n- You no longer need https:// when inputting a URL.\n- Improved note for cooperative sites.\n- Better code layout.`);
-  document.cookie = "version=2.1.1";
+  alert(`Running Unblockrr version v2.1.2 from ${ip}.\n\n2.1.2 LATEST:\n- Blocking multiple frames now works.\n- Resetting now works properly.\n- You can no longer generate a frame to a non-existing site.\n\n2.1.1:\n- You can no longer generate a frame if there is no URL.\n- You can no longer reset when there is no frame.`);
+  document.cookie = "version=2.1.2";
 };
 
 loadMessage();

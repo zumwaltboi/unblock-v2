@@ -1,0 +1,13 @@
+<head>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/59/Google_Classroom_Logo.png">
+  <title>Classroom</title>
+</head>
+<body>
+  <iframe id="frame" src="https://browser.rammerhead.org/" style="border: none;justify-content:center;"></iframe>
+  <script>
+    setInterval(() => {
+      document.getElementById('frame').width = window.innerWidth - 20;
+      document.getElementById('frame').height = window.innerHeight - 20;
+    }, 1000);
+  </script>
+</body>

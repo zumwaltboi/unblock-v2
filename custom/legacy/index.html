@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<index>
+
+  <head>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/59/Google_Classroom_Logo.png">
+    <title>Classroom</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap">
+  </head>
+
+  <body>
+    <header align="center">
+      <img src="https://cdn-icons-png.flaticon.com/512/3308/3308395.png" alt="Icon" width="300" height="300">
+      <h1>Unblockrr</h1>
+      <h2 class="version"><b>version 2.2.0</b></h2>
+    </header>
+    <div align="center" class="bottomBorder">
+      <br>
+      <textarea class="urlBox" placeholder="URL to unblock..."></textarea>
+      <br>
+      <br>
+      <button onclick="addFrame();">Generate Unblocker</button>
+      <h3 id="state">State: No Input</h3>
+    </div>
+    <div align="center" id="note">
+      <h2>Note</h2>
+      <p>Depending on the Block software and/or site, Unblockrr may fail.<br>This unblocker is primarily for games; bigger websites like Netflex/Spotify do not support this.</p>
+      <button onclick="reset();">Reset</button>
+      <br>
+      <br>
+    </div>
+    <br>
+
+    <script type="text/javascript">
+      let isFrame = false;
+
+      function addFrame() {
+        if (isFrame) {
+          if (confirm('You already have a site open. Close the current site and open a new one?')) {
+            document.getElementById('iframe').remove();
+            createFrame();
+          } else alert(`Nevermind then :)`);
+        } else createFrame();
+      };
+
+      function createFrame() {
+        let frameURL = document.getElementsByClassName("urlBox")[0].value;
+        if (frameURL === '') {
+          document.getElementById("state").innerHTML = 'State: no URL to generate';
+          return;
+        } else if (!frameURL.includes('.')) {
+          document.getElementById("state").innerHTML = 'State: Invalid URL; input another.';
+        };
+
+        var ifrm = document.createElement('iframe');
+
+        if (frameURL.startsWith('http')) ifrm.setAttribute('src', frameURL);
+        else ifrm.setAttribute('src', 'https://' + frameURL);
+
+        ifrm.style.width = '100%';
+        ifrm.style.height = '600px';
+        ifrm.id = 'iframe';
+        document.body.appendChild(ifrm);
+
+        document.getElementById("state").innerHTML = 'State: complete, scroll down';
+        document.getElementById("note").classList.add("bottomBorder");
+
+        isFrame = true;
+      };
+
+      function reset() {
+        if (!isFrame) {
+          document.getElementById("state").innerHTML = 'State: no frame to reset';
+          return;
+        };
+
+        document.getElementById("state").innerHTML = 'State: page reset, no active frame.';
+        document.getElementById("note").classList.remove("bottomBorder");
+
+        document.getElementById('iframe').remove();
+        isFrame = false;
+      };
+    </script>
+
+    <style>
+      html {
+        margin: 4;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        font-family: Comfortaa, sans-serif;
+        background: #D3D3D3;
+      }
+
+      canvas {
+        display: block;
+      }
+
+      body {
+        font-size: 18px;
+        color: #1876ab;
+        font-family: Comfortaa;
+        font-weight: 1000;
+      }
+
+      header {
+        border-bottom: 1px dashed #0082cb;
+      }
+
+      a {
+        color: #63c0f5;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #0082cb;
+      }
+
+      button {
+        width: 300px;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 5px;
+        border: 2px dashed #0082cb;
+        background-color: #D3D3D3;
+        color: #1876ab;
+        font-family: Comfortaa;
+      }
+
+      button:hover {
+        transform: scale(105%);
+      }
+
+      .version {
+        color: #666666;
+        font-size: 22px;
+        font-weight: 300;
+      }
+
+      .bottomBorder {
+        border-bottom: 1px dashed #0082cb;
+      }
+
+      .urlBox {
+        font-size: 20px;
+        line-height: 20px;
+        height: 20px;
+        border: 2px dashed #0082cb;
+        padding: 4px 7px;
+        width: 725px;
+        background-color: #D3D3D3;
+        color: #1876ab;
+        font-family: Comfortaa;
+        text-align: center;
+      }
+    </style>
+  </body>
+</index>

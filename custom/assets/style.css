@@ -1,42 +1,77 @@
-html {
-  margin: 4;
-  padding: 0;
-  align-items: center;
-  justify-content: center;
-  font-family: Comfortaa, sans-serif;
-  background: #D3D3D3;
-}
-
-canvas {
-  display: block;
-}
-
+/* root code */
 body {
+  margin: 0px;
   font-size: 18px;
   color: #1876ab;
   font-family: Comfortaa;
-  font-weight: 1000;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: #D3D3D3;
 }
 
-header {
-  border-bottom: 1px dashed #0082cb;
+/* header styles */
+#header {
+  top: 0;
+  background-color: #666666;
+  height: 6.9vw;
+  border-radius: 0 0 1.5vw 1.5vw;
 }
 
-a {
-  color: #666666;
-  text-decoration: none;
+#headerLogo {
+  position: relative;
+  margin: auto;
+  top: 50%;
+  -ms-transform: translateY(-55%);
+  transform: translateY(-55%);
+  width: 5vw;
+  left: 1.5vw;
 }
 
-h1, h2, h3 {
+#headerTitle {
+  position: relative;
+  top: -11.5vh;
+  left: 7.5vw;
+  color: #1aa3f0;
+}
+
+#headerVersion {
+  position: relative;
+  top: -21vh;
+  left: 24vw;
+  color: #1aa3f0;
+}
+
+.headerButton {
+  position: relative;
+  top: -26.1vh;
+  left: 65.9vw;
+  width: 15vw;
+  height: 6vh;
+  font-size: 20px;
+  border-radius: 1vw 1vw 0 0;
+  border: 2px solid #0082cb;
+  border-bottom: none;
+  background-color: #D3D3D3;
+  color: #1876ab;
+  font-family: Comfortaa;
+}
+
+.headerButton:hover {
+  background-color: #bdbbbb;
+}
+
+/* metadata styles */
+#metaHeader {
   color: #0082cb;
 }
 
-h6 {
+#metaNote {
   line-height: 3vw;
   margin-top: 0.1vw;
 }
 
-button {  
+.metaButton {  
   width: 300px;
   height: 40px;
   font-size: 20px;
@@ -50,27 +85,18 @@ button {
   margin-top: 7px;
 }
 
-button:hover {
+.metaButton:hover {
   transform: scale(105%);
 }
 
-.version {
-  color: #666666;
-  font-size: 22px;
-  font-weight: 300;
-}
-
-.bottomBorder {
-  border-bottom: 1px dashed #0082cb;
-}
-
-.urlBox {
+.metaInputField {
   font-size: 20px;
   line-height: 20px;
-  height: 32px;
+  height: 40px;
+  border-radius: 5px;
   border: 2px dashed #0082cb;
-  padding: 4px 7px;
-  width:  725px;
+  padding: 2px 4px;
+  width: 75%;
   background-color: #D3D3D3;
   color: #1876ab;
   font-family: Comfortaa;

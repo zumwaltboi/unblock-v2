@@ -3,46 +3,40 @@
   <head>    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap">
     <link rel="stylesheet" href="https://annotate.villainsrule.xyz/custom/assets/style.css">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         
     <title>Annotate</title>
   </head>
 
   <body>
-    <header align="center">
-      <img src="https://cdn-icons-png.flaticon.com/512/3308/3308395.png" width="300" height="300">
-      <h1>Unblockrr</h1>
-      <h2 class="version"><b>Loading...</b></h2>
-      <h6><a href="https://annotate.villainsrule.xyz/custom/legacy">Switch to Legacy</a></h6>
-    </header>
-    
-    <div align="center" class="bottomBorder">
-      <h2>Input a URL!</h2>
-      <p>This will now auto-update at the bottom of the page.<br>When you are done typing, scroll down.</p>
-      <input class="urlBox" type="text" placeholder="Enter URL...">
-      <br>
-      <br>
+    <div id="header">
+      <img id="headerLogo" src="https://cdn-icons-png.flaticon.com/512/3308/3308395.png">
+      <h1 id="headerTitle">Unblockrr</h1>
+      <p id="headerVersion">v5.0.0</p>
+      
+      <button class="headerButton" onclick="showUnblocker();">Unblocker</button>
+      <button class="headerButton" onclick="showMetadata();">Metadata</button>
+      
     </div>
     
-    <div align="center" class="bottomBorder">
-      <h2>Tab Metadata</h2>
-      <p>You can now change how the tab looks!</p>
-      <input class="urlBox" type="text" placeholder="Tab name..." id="metadata.name">
+    <div id="iframeDiv" align="center">
+      <br>
+      <br>
+      <iframe src="https://google-clone-thecreativist.vercel.app" id="iframe" width="95%" height="83%" style="border: 2px dashed #0082cb;"></iframe>
+    </div>
+    
+    <div id="metaDiv" align="center" style="display: none;">
+      <h2 id="metaHeader">Tab Metadata</h2>
+      
+      <input class="metaInputField" type="text" placeholder="Tab name..." id="nameField">
       <br><br>
-      <input class="urlBox" type="text" placeholder="Tab icon..." id="metadata.ico">
-      <h6>the tab icon must be a valid image URL. to get an image url, find an image, right click it, then copy and paste the image address above.</h6>
+      <input class="metaInputField" type="text" placeholder="Tab icon..." id="icoField">
+      <h6 id="metaNote">the tab icon must be a valid image URL. to get an image url, find an image, right click it, then copy and paste the image address above.</h6>
       <p>We've also made quick templates!</p>
-      <button onclick="docs();">Google Drive</button>
-      <button onclick="gmail();">Gmail</button>
-      <br><br>
-      <button onclick="alert('Coming soon...custom templates!')">Custom</button>
-      <button onclick="alert('Coming soon...custom templates!')">Custom</button>
-      <br><br>
-    </div>
-    
-    <div align="center" id="note">
-      <h2>Note</h2>
-      <p>Unblockrr is made for games, and will likely work on only those.</p>
-      <button onclick="reset();">Reset</button>
+      
+      <button class="metaButton" onclick="drive();">Google Drive</button>
+      <button class="metaButton" onclick="gmail();">Gmail</button>
       <br><br>
     </div>
     

@@ -1,92 +1,41 @@
-const config = {
-  version: '4.0.0',
-  build: 'Production'
-}
+// my css is messy lo :skull:
+if (window.innerWidth < 1100 || window.innerWidth > 1200 || window.innerHeight < 500 || window.innerHeight > 550) alert('Hey!\n\nUnblockrr/Annotate Custom v5.0.0 is coded for a very specific screen size.\n\nYour screen doesn\'t fit this. Your page will likely look mangled.\n\nConsider using another unblocker.')
 
-let isFrame = false;
+// tab functions
+function showUnblocker() {
+  document.getElementById('iframeDiv').style.display = 'block';
+  document.getElementById('metaDiv').style.display = 'none';
+};
 
-document.head = document.head || document.getElementsByTagName('head')[0];
+function showMetadata() {
+  document.getElementById('iframeDiv').style.display = 'none';
+  document.getElementById('metaDiv').style.display = 'block';
+};
 
+// metadata functions
 function changeFavicon(src) {
-  let link = document.createElement('link');
-  let oldLink = document.getElementById('dynamic-fav');
-  
-  link.id = 'dynamic-fav';
-  link.rel = 'shortcut icon';
-  link.href = src;
-  
-  if (oldLink) document.head.removeChild(oldLink);
-  document.head.appendChild(link);
+  if ($('#dynamic-fav')) $('#dynamic-fav').remove();
+  $(`head:first`).append(`<link id="dynamic-fav" rel="shortcut icon" href=${src}>`)
 };
 
-document.getElementsByClassName("urlBox")[0].addEventListener('input', function(event) {
-  if (isFrame) document.getElementById('iframe').remove();
-  let frameURL = document.getElementsByClassName("urlBox")[0].value;
-  
-  let ifrm = document.createElement('iframe');
-  
-  if (frameURL.startsWith('http')) ifrm.setAttribute('src', frameURL);
-  else ifrm.setAttribute('src', 'https://' + frameURL);
-  
-  ifrm.style.width = '100%';
-  ifrm.style.height = '600px';
-  ifrm.id = 'iframe';
-  document.body.appendChild(ifrm);
-
-  document.getElementById("note").classList.add("bottomBorder");
-  
-  isFrame = true;
-});
-
-function reset() {
-  if (!isFrame) return;
-  
-  document.getElementById("note").classList.remove("bottomBorder");
-  document.getElementById('iframe').remove();
-  isFrame = false;
-};
-
-function docs() {
-  // INTERCHANGEABLE between DOCS/DRIVE
-  // tbf idek why I did this
-  
-  /* GOOGLE DOCS:
-  let name = prompt('Enter your full name:');
-  let assignment = prompt('Enter an assignment name:');
-  document.title = `${name} - ${assignment} - Google Docs`;
-  */
-  
-  // /* GOOGLE DRIVE:
-  changeFavicon("https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png");
+function drive() {
+  changeFavicon('https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png');
   document.title = `My Drive - Google Drive`;
-  // */
 };
 
 function gmail() {
-  let unread = prompt('Enter a number of unread emails:');
-  let email = prompt('Enter your email:');
   changeFavicon("https://ssl.gstatic.com/images/branding/product/1x/gmail_2020q4_32dp.png");
-  document.title = `Inbox (${unread}) - ${email}`;
+  document.title = `Inbox (${prompt('Enter a number of unread emails:')}) - ${prompt('Enter your email:')}`;
 };
 
-function khan() {
-  changeFavicon('https://www.khanacademy.org/favicon.ico');
-  document.title = `* READ: ${prompt('Enter the assignment name')} (article) | Khan Academy`;
-};
-
-function kahoot() {
-  changeFavicon('https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/kahoot.icon?v=1673558357629');
-  document.title = `Kahoot!`;
-};
-
-document.getElementById('metadata.name').addEventListener('input', function(event) {
-    document.title = document.getElementById('metadata.name').value;
+// metadata listeners
+document.getElementById('nameField').addEventListener('input', function(event) {
+    document.title = document.getElementById('nameField').value;
 });
 
-document.getElementById('metadata.ico').addEventListener('input', function(event) {
-    changeFavicon(document.getElementById('metadata.ico').value);
+document.getElementById('icoField').addEventListener('input', function(event) {
+    changeFavicon(document.getElementById('icoField').value);
 });
 
-// changeFavicon('https://cdn-icons-png.flaticon.com/512/3308/3308395.png');
+// site icon (normally setting does nothing?)
 changeFavicon('https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349');
-document.getElementsByClassName('version')[0].innerHTML = `${config.build} v${config.version}`;

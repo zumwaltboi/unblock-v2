@@ -23,7 +23,7 @@
     <header align="center" style="border-bottom: none;">
       <img src="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png" width="300" height="300">
       <h1>Annotate</h1>
-      <h2 class="version" onclick="openSecureWindow();">Launch Annotate <img src="https://cdn-icons-png.flaticon.com/512/3388/3388930.png"></h2>
+      <h2 class="version" onclick="openSecureWindow();">Launch Annotate <img src="https://cdn-icons-png.flaticon.com/512/3388/3388930.png" height="22"></h2>
     </header>
     
     <script type="text/javascript">
@@ -40,7 +40,7 @@
           currentWindow = null;
         };
         
-        let currentWindow = window.open('about:blank')
+        currentWindow = window.open('about:blank')
         currentWindow.document.write(`<head><title>404</title></head><body><style>body {margin: 0;}</style><iframe style="border: none;" src="https://anno.villainsrule.xyz/home" width="100%" height="100%"></body>`);
         setTimeout(() => {
           if (!currentWindow.checker) currentWindow = null;

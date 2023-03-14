@@ -58,7 +58,29 @@
     <br>
     
     <script>
-      axios.get(`https://annotation.villainsrule.repl.co/addsession`).then((res) => {
+      const req = {
+        get: (url, callback) => {
+          if (!callback) callback = (data) => {}
+          $.ajax({
+            type: "GET",
+            url: url,
+            contentType: "application/json",
+            success: (data) => callback(data)
+          });
+        },
+        post: (url, data, callback) => {
+          if (!callback) callback = (data) => {}
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            success: (data) => callback(data)
+          });
+        }
+      };
+      
+      req.get(`https://annotation.villainsrule.repl.co/addsession`, (data) => {
         alert(res.data.clientId);
         
         $('#appendYourMother').append(`<h2 class="version">Client ID: ${res.data.clientId}</h2>`)

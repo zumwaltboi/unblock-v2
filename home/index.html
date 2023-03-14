@@ -85,9 +85,8 @@
         setInterval(() => {
           req.post(`https://annotation.villainsrule.repl.co/check`, { clientId: data.clientId }, (data) => {
             if (!data.men) return;
-            try {  document.querySelector(".toastMessage").remove(); } catch {};
+            try { document.querySelector(".toastMessage").remove(); } catch {};
             let id = Math.random().toString(36).substring(2, 15);
-            alert(id);
             $("body").append(`<div id="${id}" class="toastMessage" style="animation: growIn 0.5s linear forwards; background-color: #1f1f1f;border-radius: 7px;left: 0; right: 0; margin: auto;text-align: center;height: fit-content;top: -90%;"><text style="color: white; font-size:20px;">Someone connected to Annotate...</text></div>`);
 
             setTimeout(() => {

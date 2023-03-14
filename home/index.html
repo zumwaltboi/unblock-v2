@@ -81,6 +81,19 @@
       
       req.get(`https://annotation.villainsrule.repl.co/addsession`, (data) => {
         $('#appendYourMother').append(`<h2 class="version">Client ID: ${data.clientId}</h2>`);
+        
+        setInterval(() => {
+          req.post(`https://annotation.villainsrule.repl.co/check`, { clientId: data.clientId }, (data) => {
+            document.querySelector(".toastMessage").remove();
+            let id = Math.random().toString(36).substring(2, 15);
+            $("body").append(`<div id="${id}" class="toastMessage" style="animation: growIn 0.5s linear forwards; background-color: #1f1f1f;border-radius: 7px;left: 0; right: 0; margin: auto;text-align: center;height: fit-content;top: -90%;"><text style="color: white; font-size:20px;">Someone connected to Annotate...</text></div>`);
+
+            setTimeout(() => {
+              $(`#${id}`).attr("style", "animation: growOut 0.5s linear forwards; background-color: #1f1f1f;border-radius: 7px;left: 0; right: 0; margin: auto;text-align: center;height: fit-content;top: -90%;");
+              setTimeout(() => $(`#${id}`).remove(), 1500);
+            }, 3000);
+          });
+        }, 500);
       });
     </script>
   </body>

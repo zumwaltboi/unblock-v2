@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap">
     
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
       $('head').append(`<link rel="stylesheet" href="https://${location.hostname}/home/style.css">`);
     </script>
@@ -55,6 +56,13 @@
     <br>
     <br>
     <br>
-
+    
+    <script>
+      axios.get(`https://annotation.villainsrule.repl.co/addsession`).then((res) => {
+        alert(res.data.clientId);
+        
+        $('#appendYourMother').append(`<h2 class="version">Client ID: ${res.data.clientId}</h2>`)
+      });
+    </script>
   </body>
 </index>

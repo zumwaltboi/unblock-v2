@@ -17,13 +17,20 @@
     </header>
     
     <div align="center" class="bottomBorder">
+      <h2>Browsers</h2>
+      <button onclick="location.pathname = '/browser/rh';">Rammerhead</button><br>
+      <button onclick="location.pathname = '/browser/vc';">Velocity</button><br>
+      <br>
+    </div>
+    
+    <div align="center" class="bottomBorder">
       <h2>Unblockers</h2>
       <button onclick="location.pathname = '/unb/lunar';">Lunanom</button><br>
-      <!-- <button onclick="location.pathname = '/unb/metallic';">Metallic</button><br> -->
+      <button onclick="location.pathname = '/unb/metallic';">Metallic</button><br>
       <button onclick="location.pathname = '/unb/nebula';">Nebula</button><br>
-      <button onclick="location.pathname = '/unb/rh';">Rammerhead</button><br>
       <button onclick="location.pathname = '/unb/uv';">Ultraviolet</button><br>
       <button onclick="location.pathname = '/unb/toppings';">Webtoppings</button><br>
+      <button onclick="location.pathname = '/unb/wom';">Womginx</button><br>
       <br>
     </div>
     
@@ -78,24 +85,5 @@
           });
         }
       };
-      
-      req.get(`https://annotation.villainsrule.repl.co/addsession`, (data) => {
-        $('#appendYourMother').append(`<h2 class="version">Client ID: ${data.clientId}</h2>`);
-        
-        setInterval(() => {
-          req.post(`https://annotation.villainsrule.repl.co/check`, { clientId: data.clientId }, (data) => {
-            if (!data.men) return;
-            try { document.querySelector(".toastMessage").remove(); } catch {};
-            let id = Math.random().toString(36).substring(2, 15);
-            $("body").append(`<div id="${id}" class="toastMessage" style="animation: growIn 0.5s linear forwards; background-color: #1f1f1f;border-radius: 7px;left: 0; right: 0; margin: auto;text-align: center;height: fit-content;top: -90%;"><text style="color: white; font-size:20px;">Someone connected to Annotate...</text></div>`);
-
-            setTimeout(() => {
-              $(`#${id}`).attr("style", "animation: growOut 0.5s linear forwards; background-color: #1f1f1f;border-radius: 7px;left: 0; right: 0; margin: auto;text-align: center;height: fit-content;top: -90%;");
-              setTimeout(() => $(`#${id}`).remove(), 1500);
-            }, 3000);
-          });
-        }, 500);
-      });
-    </script>
   </body>
 </index>

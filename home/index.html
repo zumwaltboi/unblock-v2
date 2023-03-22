@@ -56,7 +56,14 @@
     <br>
     
     <script>      
-      if (document.cookie.includes('blacklisted')) $('body').html('null');
+      if (document.cookie.includes('blacklisted')) {
+        $('body').html('null');
+        $('head').html(`
+          <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap">
+          <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        `);
+      };
     </script>
   </body>
 </index>

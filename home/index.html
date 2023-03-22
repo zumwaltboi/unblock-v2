@@ -13,13 +13,13 @@
     <header align="center" id="appendYourMother">
       <img src="https://cdn-icons-png.flaticon.com/512/3308/3308395.png" width="300" height="300">
       <h1>Unblockrr</h1>
-      <h2 class="version">A sweet collection of unblockers & games.</h2>
+      <h2 class="version">A sweet collection of embedded browsers, unblockers, and games.</h2>
     </header>
     
     <div align="center" class="bottomBorder">
       <h2>Browsers</h2>
-      <button onclick="location.pathname = '/browser/rh';">Rammerhead</button><br>
-      <button onclick="location.pathname = '/browser/vc';">Velocity</button><br>
+      <button onclick="location.pathname = '/search/rh';">Rammerhead</button><br>
+      <button onclick="location.pathname = '/search/velo';">Velocity</button><br>
       <br>
     </div>
     
@@ -37,55 +37,26 @@
     <div align="center" class="bottomBorder">
       <h2>Apps</h2>
       <button onclick="location.pathname = '/apps/chat';">ChatGPT</button><br>
-      <button onclick="location.pathname = '/apps/cord';">Discord</button><br>
-      <button onclick="location.pathname = '/apps/flix';">Netflix</button><br>
+      <button onclick="location.pathname = '/apps/disc';">Discord</button><br>
+      <button onclick="location.pathname = '/apps/watch';">Netflix</button><br>
       <button onclick="location.pathname = '/apps/pin';">Pintrest</button><br>
-      <button onclick="location.pathname = '/apps/tok';">TikTok</button><br>
       <button onclick="location.pathname = '/apps/dictionary';">Urban Dictionary</button><br>
       <br>
     </div>
     
     <div align="center" class="bottomBorder">
-      <h2>Games</h2>
-      <button onclick="location.pathname = '/games/3kh0';">3kh0</button><br>
-      <button onclick="location.pathname = '/games/skool';">Skool</button><br>
+      <h2>Game Collections</h2>
+      <button onclick="location.pathname = '/play/echo';">3kh0</button><br>
+      <button onclick="location.pathname = '/play/or';">OutRed</button><br>
+      <button onclick="location.pathname = '/play/school';">Skool</button><br>
       <br>
     </div>
-    
-    <!--
-    <div align="center" class="bottomBorder">
-      <h2>Annotate</h2>
-      <button onclick="location.pathname = '/custom';">Annotator</button><br>
-      <br>
-    </div>
-    --->
     <br>
     <br>
     <br>
     
-    <script>
-      const req = {
-        get: (url, callback) => {
-          if (!callback) callback = (data) => {}
-          $.ajax({
-            type: "GET",
-            url: url,
-            contentType: "application/json",
-            success: (data) => callback(data)
-          });
-        },
-        post: (url, data, callback) => {
-          if (!callback) callback = (data) => {}
-          $.ajax({
-            type: "POST",
-            url: url,
-            data: JSON.stringify(data),
-            contentType: "application/json",
-            success: (data) => callback(data)
-          });
-        }
-      };
-      
-      if (document.cookie.includes('blacklisted')) $('body').html('null')
+    <script>      
+      if (document.cookie.includes('blacklisted')) $('body').html('null');
+    </script>
   </body>
 </index>

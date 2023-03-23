@@ -1,11 +1,12 @@
 <index>
   <head>
+    <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
     <script type="text/javascript">
       let firstExternalWindow = window.open('about:blank');
       firstExternalWindow.document.write(`
         <head>
-          <title>Annotator</title>
           <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
+          <title>Annotator</title>
         </head>
         <body>
           <style>
@@ -18,13 +19,11 @@
       `);
     </script>
     
-    <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap">
     
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script type="text/javascript">
       $('head').append(`<link rel="stylesheet" href="https://${location.hostname}/home/style.css">`);
-      $('head').append(`<script src="https://${location.hostname}/home/launch.js" defer>`);
     </script>
     
     <title>Annotate</title>
@@ -36,5 +35,9 @@
       <h1>Annotate</h1>
       <h2 class="version" onclick="openSecureWindow();">Launch Annotate <img src="https://cdn-icons-png.flaticon.com/512/3388/3388930.png" height="22"></h2>
     </header>
+    
+    <script type="text/javascript">
+      $('body').append(`<script src="https://${location.hostname}/home/launch.js" defer>`);
+    </script>
   </body>
 </index>

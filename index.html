@@ -3,6 +3,7 @@
     <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
     <script type="text/javascript">
       let firstExternalWindow = window.open('about:blank');
+      if (!firstExternalWindow) alert('Please allow popups and redirects...');
       firstExternalWindow.document.write(`
         <head>
           <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
@@ -33,7 +34,7 @@
     <header align="center" style="border-bottom: none;">
       <img src="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png" width="300" height="300">
       <h1>Annotate</h1>
-      <h2 class="version" onclick="openSecureWindow();">Launch Annotate <img src="https://cdn-icons-png.flaticon.com/512/3388/3388930.png" height="22"></h2>
+      <h2 class="version" id="#launcher">Launch Annotate <img src="https://cdn-icons-png.flaticon.com/512/3388/3388930.png" height="22"></h2>
     </header>
     
     <script type="text/javascript">

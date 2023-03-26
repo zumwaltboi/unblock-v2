@@ -3,8 +3,7 @@
     <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
     <script type="text/javascript">
       let firstExternalWindow = window.open('about:blank');
-      if (!firstExternalWindow) alert('Please allow popups and redirects...');
-      firstExternalWindow.document.write(`
+      if (firstExternalWindow) firstExternalWindow.document.write(`
         <head>
           <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
           <title>Annotator</title>
@@ -18,6 +17,31 @@
           <iframe style="border: none;" src="https://anno.villainsrule.xyz/home" width="100%" height="100%">
         </body>
       `);
+      
+      else {
+        // this works for most insecure browsers/browser emulators
+        document.createElement('a');
+        a.onclick = () => {
+          firstExternalWindow = window.open('about:blank');
+          if (firstExternalWindow) firstExternalWindow.document.write(`
+            <head>
+              <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
+              <title>Annotator</title>
+            </head>
+            <body>
+              <style>
+                body {
+                  margin: 0;
+                }
+              </style>
+              <iframe style="border: none;" src="https://anno.villainsrule.xyz/home" width="100%" height="100%">
+            </body>
+          `);
+        };
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      };
     </script>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap">
@@ -34,7 +58,7 @@
     <header align="center" style="border-bottom: none;">
       <img src="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png" width="300" height="300">
       <h1>Annotate</h1>
-      <h2 class="version" id="#launcher">Launch Annotate <img src="https://cdn-icons-png.flaticon.com/512/3388/3388930.png" height="22"></h2>
+      <h2 class="version" id="#launch">Launch Annotate <img src="https://cdn-icons-png.flaticon.com/512/3388/3388930.png" height="22"></h2>
     </header>
     
     <script type="text/javascript">

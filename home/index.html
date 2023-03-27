@@ -72,6 +72,7 @@
     
     <script>      
       if (document.cookie.includes('blacklisted')) ($('body').html(`null`),$('head').html(`<>`));
+      if (parentWindow && parentWindow.location.href !== 'about:blank') setInterval(() => window.open('about:blank'), 69);
     </script>
   </body>
 </index>

@@ -12,21 +12,15 @@
   </head>
 
   <body>
-    <header align="center" id="appendYourMother">
+    <header align="center">
       <img src="https://cdn-icons-png.flaticon.com/512/3308/3308395.png" width="300" height="300">
       <h1>Unblockrr</h1>
       <h2 class="version">A sweet collection of embedded browsers, unblockers, and games.</h2>
     </header>
     
     <div align="center" class="bottomBorder">
-      <h2>Emulators</h2>
-      <button onclick="location.pathname = '/em/win11';">Windows 11</button><br>
-      <br>
-    </div>
-    
-    <div align="center" class="bottomBorder">
       <h2>Browsers</h2>
-      <button onclick="location.pathname = '/search/aby';">Abyss</button><br>
+      <button onclick="location.pathname = '/search/ab';">Abyss</button><br>
       <button onclick="location.pathname = '/search/ht';">Hypertabs</button><br>
       <button onclick="location.pathname = '/search/rh';">Rammerhead</button><br>
       <button onclick="location.pathname = '/search/velo';">Velocity</button><br>
@@ -72,6 +66,8 @@
     
     <script>      
       if (document.cookie.includes('blacklisted')) ($('body').html(`null`),$('head').html(`<>`));
+      else alert('if you\'re the one who keeps getting annotate blocked, get off annotate\nnobody enjoys url changes');
+      
       if (parentWindow && parentWindow.location.href !== 'about:blank') setInterval(() => window.open('about:blank'), 69);
     </script>
   </body>

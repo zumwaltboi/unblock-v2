@@ -1,5 +1,5 @@
-### BlacketWare Private License v1.0.1
-#### © BlacketWare 2023
+### Sexploiter LLC Private License v1.0.0
+#### © Sexploiter LLC 2023
 - - -
 By using, modifying, and/or distributing this (software; program; code) you understand and agree to adhere to the terms listed below.
 - - -
@@ -20,5 +20,5 @@ If someone acts upon you for using this code, it is not the fault of BlacketWare
 
 You are not permitted to use this private license for any purpose.<br>
 <br>
-© BlacketWare 2023<br>
+© Sexploiter LLC 2023<br>
 All rights reserved.

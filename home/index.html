@@ -3,10 +3,10 @@
     <link rel="icon" href="https://cdn.glitch.global/a300bc83-1349-40d5-8dc8-60619ca5027c/annotate.png?v=1673970874349">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap">
     
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="/home/style.css">
     <script type="text/javascript">
-      alert(`As we work on Annotate v3, this will be infrequently updated.\n\nWe are aware of the following broken services:\n- Hypertabs\n- Nebula (doesn't load)\n- Lunanom`)
+      if (document.cookie.includes('blacklisted')) document.innerHTML = '';
+      else alert(`Annotate v3 will be [hopefully] launching on 4/24/22.\n\nWe are STILL AWARE of the following broken services (fixed in v3!):\nAbyss, Hypertabs, Velocity, Holy Unblocker, Lunanom, & Nebula`)
     </script>
     
     <title>Annotate</title>
@@ -60,9 +60,5 @@
     <br>
     <br>
     <br>
-    
-    <script>      
-      if (document.cookie.includes('blacklisted')) ($('body').html(`null`),$('head').html(`<>`));
-    </script>
   </body>
 </index>
